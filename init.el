@@ -27,7 +27,16 @@
 
                       ;; org-mode ; I'm not this gutsy yet. bemacs
                       markdown-mode
-                      hlinum)
+                      hlinum
+
+                      ;; finally, an editor!
+                      evil
+                      evil-leader
+                      ;evil-surround
+                      evil-nerd-commenter
+
+                      key-chord
+                      )
   "A list of packages to ensure are installed at launch.")
 ;;            align-cljlet, mic-paren, ac-nrepl, nrepl-ritz
 
@@ -38,10 +47,14 @@
 
 ;; Bring back the menu bar.
 ;;(funcall menu-bar-mode t)
-
+ 
 ;; Load the provided Clojure start kit configurations
 (load (concat user-emacs-directory "clojure-starter-kit.el"))
+
+;; Load evil-mode keymaps
+(load (concat user-emacs-directory "evil.el"))
  
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

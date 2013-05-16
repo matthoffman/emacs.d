@@ -17,6 +17,7 @@
 ;;Exit insert mode by pressing j and then k quickly
 (setq key-chord-two-keys-delay 0.5)
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+(key-chord-define evil-normal-state-map "mx" 'smex)
 (key-chord-mode 1)
 
 ;;; esc quits things like C-g
@@ -39,3 +40,5 @@
 
 (my-move-key evil-motion-state-map evil-normal-state-map (kbd "RET"))
 (my-move-key evil-motion-state-map evil-normal-state-map " ")
+
+(add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode)

@@ -3,7 +3,9 @@
  
 ;; General
 ;;(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)                    ; Disable emacs-starter-kits line highlighting
-(load-theme 'solarized-dark t)
+;;(load-theme 'solarized-dark t)
+;;(load-theme 'zen-and-art-theme t)
+(load-theme 'cyberpunk t)
 
 (setq initial-scratch-message nil)                                         ; *scratch* starts empty
 (when (locate-library "clojure-mode")                                      ; Set *scratch* to Clojure mode

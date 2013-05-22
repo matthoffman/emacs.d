@@ -73,6 +73,12 @@
 ;(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 ;(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
+
+(load (concat user-emacs-directory "markdown.el"))
+
+
+
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

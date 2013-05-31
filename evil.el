@@ -23,13 +23,17 @@
 ;;; esc quits things like C-g
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
 (define-key evil-visual-state-map [escape] 'keyboard-quit)
-(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'keyboard-quit)
 
-;; give emacs back the return and space keys. Vim uses them as motion
+
+(evil-ex-define-cmd "y[ank]" 'evil-yank) ; not sure why this isn't
+                                         ; defined by default...?
+  
+                                        ; give emacs back the return and space keys. Vim uses them as motion
 ;; keys by default (synonymous w/ j and l) but I don't use them as
 ;; such.
 (defun my-move-key (keymap-from keymap-to key)
@@ -41,4 +45,7 @@
 (my-move-key evil-motion-state-map evil-normal-state-map (kbd "RET"))
 (my-move-key evil-motion-state-map evil-normal-state-map " ")
 
-(add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode)
+(autoload 'evil-paredit-mode "evil-paredit" "honor paredit while in evil mode" t)
+;;(add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode) ; is this
+;;turning it off? 
+

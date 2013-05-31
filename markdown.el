@@ -41,3 +41,5 @@
   )
   )
 
+(add-hook 'markdown-mode-hook 'turn-on-visual-line-mode)
+(add-hook 'markdown-mode-hook 'turn-off-auto-fill)

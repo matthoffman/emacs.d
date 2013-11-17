@@ -68,6 +68,9 @@
 ;; Load evil-mode keymaps
 (load (concat user-emacs-directory "evil.el"))
 
+;; Load multimarkdown mode. Not available in a repo as far as I can tell.
+(load (concat user-emacs-directory "multimarkdown-mode.el"))
+
 ;; move temporary files
 ;; TODO: move them into some dir in $HOME instead
 ;(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
